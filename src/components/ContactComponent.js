@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import {Control, Form, Errors, actions } from 'react-redux-form';
+import {Control, Form, Errors } from 'react-redux-form';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -12,7 +12,6 @@ const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val
 class Contact extends Component {
     constructor(props){
         super(props);
-        
         this.handleSubmit=this.handleSubmit.bind(this);
     }
 
@@ -20,6 +19,7 @@ class Contact extends Component {
     handleSubmit(values) {
         console.log("Current State is :"+ JSON.stringify(values));
         alert("Current State is :"+ JSON.stringify(values));
+        this.props.postFeedback(values);
         this.props.resetFeedbackForm();
     }
 
