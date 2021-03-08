@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Card, CardImg, CardText ,CardTitle ,CardBody , CardSubtitle} from 'reactstrap';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseURl';
